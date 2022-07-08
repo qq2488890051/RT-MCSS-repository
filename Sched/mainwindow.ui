@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1339</width>
+    <height>874</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RT-MCSS</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QCustomPlot" name="customPlot" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>1321</width>
+      <height>441</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSched">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>30</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 191, 0);</string>
+    </property>
+    <property name="text">
+     <string>Run</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_scheduRes">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>810</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>10</y>
+      <width>291</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>CPU status</string>
+    </property>
+    <widget class="QTableWidget" name="tableWidgetInfoTaskSet">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>271</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>65</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>25</number>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>processor</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>number of tasks</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>utilization</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>680</y>
+      <width>1111</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Result of shceduling</string>
+    </property>
+    <widget class="QTableWidget" name="tableWidgetCoreResult">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>401</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>100</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>40</number>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>core</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>schedulability</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>core 0</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>core</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>schedulability</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QTableWidget" name="tableWidgetMissDeadline">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>20</y>
+       <width>651</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>100</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>40</number>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>task name</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>deadline missed ratio</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>task1</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>task name</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>deadline missed ratio</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>841</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Mixed Real-time Task Set (Fixed-point task and Period/Sporadic task)</string>
+    </property>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>721</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::DoubleClicked</set>
+     </property>
+     <property name="textElideMode">
+      <enum>Qt::ElideLeft</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="showGrid">
+      <bool>true</bool>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::SolidLine</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>100</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>28</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>task name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>period T</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>execution time C</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>deadline D</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>arrival offset A</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>priority</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>task type</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>core</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>task1</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item row="0" column="4">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="0" column="5">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="0" column="6">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="0" column="7">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>task2</string>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>9</string>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item row="1" column="4">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="1" column="5">
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item row="1" column="6">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="1" column="7">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>task3</string>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+     <item row="2" column="3">
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item row="2" column="4">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="2" column="5">
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item row="2" column="6">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="2" column="7">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>task4</string>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item row="3" column="2">
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item row="3" column="3">
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item row="3" column="4">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="3" column="5">
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item row="3" column="6">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="3" column="7">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>task5</string>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+     <item row="4" column="2">
+      <property name="text">
+       <string>3</string>
+      </property>
+     </item>
+     <item row="4" column="3">
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item row="4" column="4">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </item>
+     <item row="4" column="5">
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item row="4" column="6">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item row="4" column="7">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="pushButtonAddTask">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>add task</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDeletTask">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>60</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>delete task</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonMoreInfo">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>173</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+       <italic>false</italic>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 20, 255);</string>
+     </property>
+     <property name="text">
+      <string>more info</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>680</y>
+      <width>151</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Zoom in/out</string>
+    </property>
+    <widget class="QRadioButton" name="radioButtonXY">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>zoom XY</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonX">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>zoom X</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonY">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>zoom Y</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonAutoRange">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>adjust show</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1339</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>File(&amp;F)</string>
+    </property>
+    <addaction name="action_X"/>
+   </widget>
+   <widget class="QMenu" name="menu_H">
+    <property name="title">
+     <string>
+Help(&amp;H)</string>
+    </property>
+    <addaction name="action_H"/>
+    <addaction name="action_A"/>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>Tool(&amp;T)</string>
+    </property>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_T"/>
+   <addaction name="menu_H"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_X">
+   <property name="text">
+    <string>Quit(&amp;X)</string>
+   </property>
+  </action>
+  <action name="action_H">
+   <property name="text">
+    <string>Help(&amp;H)</string>
+   </property>
+   <property name="toolTip">
+    <string>Help(H)</string>
+   </property>
+  </action>
+  <action name="action_A">
+   <property name="text">
+    <string>About(A)</string>
+   </property>
+   <property name="toolTip">
+    <string>About(A)</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

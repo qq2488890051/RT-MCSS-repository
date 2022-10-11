@@ -23,6 +23,3 @@ In order to provide convenience for users to design and verify the multi-core mi
 + QT version：QT 5.6.1
 + Complier：Mingw49-32
 
-
-## Communication
-

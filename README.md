@@ -25,4 +25,4 @@ In order to provide convenience for users to design and verify the multi-core mi
 
 
 ## Communication
-Please join the QQ group 797703412
+
